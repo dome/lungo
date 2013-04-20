@@ -1,0 +1,4 @@
+/* Litetabs - http://nicolahibbert.com/lightweight-jquery-tab-plugin/ */
+;(function($){$.fn.liteTabs=function(options){return this.each(function(){var defaults={height:'auto',hideHash:true,selectedTab:1,},settings=$.extend({},defaults,options),$this=$(this),$ul=$this.children('ul'),$tab=$ul.find('a'),$div=$('> div',$this);$this.addClass('liteTabs').width(settings.width);$div.css({height:settings.height,width:settings.width-(parseInt($div.css('padding-left'))+parseInt($div.css('padding-right'))),position:'absolute',left:-9999});$tab.click(function(e){var filterHash=$div.removeClass('selected').filter('[name='+this.hash+']');$tab.removeClass('selected').filter(this).addClass('selected');(settings.fadeIn)?filterHash.hide().addClass('selected').fadeIn():filterHash.addClass('selected');settings.hideHash&&e.preventDefault();});settings.selectedTab&&$tab.eq(settings.selectedTab-1).click();});};})(jQuery);
+
+/* ADD NEW JS BELOW */
